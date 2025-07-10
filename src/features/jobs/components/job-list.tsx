@@ -1,4 +1,6 @@
 'use client'
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
 import JobCard from "@/features/jobs/components/job-card";
 import useJobs from "../hooks/use-jobs";
 import { useSearch, SearchFilters } from "@/hooks/use-search";
@@ -7,11 +9,13 @@ type Props = {
   category: string;
   title: string;
   searchFilters?: SearchFilters;
+  showLoadMore?: boolean;
 };
 
-function JobList({ title, category, searchFilters }: Props) {
-  const categoryJobs = useJobs({ category });
+function JobList({ title, category, searchFilters, showLoadMore = false }: Props) {
+  const [displayLimit, setDisplayLimit] = useState(10);
   const allJobs = useJobs({});
+  const categoryJobs = category ? useJobs({ category }) : allJobs;
   
   const hasActiveSearch = searchFilters && (searchFilters.query || searchFilters.category || searchFilters.location || searchFilters.jobType);
   
@@ -23,8 +27,14 @@ function JobList({ title, category, searchFilters }: Props) {
     jobType: "",
   });
   
-  const jobsToShow = hasActiveSearch ? searchResults : categoryJobs;
-  const displayTitle = hasActiveSearch ? `Search Results (${jobsToShow.length})` : title;
+  const allJobsToShow = hasActiveSearch ? searchResults : categoryJobs;
+  const jobsToShow = showLoadMore ? allJobsToShow.slice(0, displayLimit) : allJobsToShow;
+  const hasMoreJobs = showLoadMore && allJobsToShow.length > displayLimit;
+  const displayTitle = hasActiveSearch ? `Search Results (${allJobsToShow.length})` : title;
+
+  const loadMoreJobs = () => {
+    setDisplayLimit(prev => prev + 10);
+  };
 
   if (hasActiveSearch && jobsToShow.length === 0) {
     return (
@@ -38,11 +48,6 @@ function JobList({ title, category, searchFilters }: Props) {
     );
   }
 
-  // Don't show category sections when there's an active search
-  if (hasActiveSearch && category !== "electrician") {
-    return null;
-  }
-
   return (
     <div className="flex flex-col gap-5">
       <h3 className="text-xl font-semibold text-foreground">{displayTitle}</h3>
@@ -51,6 +56,15 @@ function JobList({ title, category, searchFilters }: Props) {
           return <JobCard job={job} key={job.id} />;
         })}
       </div>
+      {hasMoreJobs && (
+        <Button 
+          variant="outline" 
+          className="md:w-full max-w-[661px] mx-auto" 
+          onClick={loadMoreJobs}
+        >
+          View more jobs
+        </Button>
+      )}
     </div>
   );
 }

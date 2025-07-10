@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 150" role="img" aria-labelledby="title">
+  <title id="title">promptengineers logo</title>
+  
+  <defs>
+    <filter id="softShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.08" />
+    </filter>
+  </defs>
+  
+  <text x="0" y="110" 
+        font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" 
+        font-weight="600" 
+        font-size="96" 
+        letter-spacing="-0.01em" 
+        fill="#1F2937" 
+        filter="url(#softShadow)">promptengineers</text>
+</svg>

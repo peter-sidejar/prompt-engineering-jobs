@@ -6,6 +6,14 @@ import { Job } from "../types";
 import { cn } from "@/lib/utils";
 import { createJobUrl } from "@/lib/url-utils";
 import Link from "next/link";
+
+const formatSalary = (amount: number): string => {
+  if (amount >= 1000) {
+    return `${Math.floor(amount / 1000)}K`;
+  }
+  return amount.toString();
+};
+
 type Props = {
   job: Job;
   variant?: "default" | "colored";
@@ -43,8 +51,8 @@ function JobCard({ job, variant = "default" }: Props) {
         </div>
         <Badge variant="secondary">
           {currencySymbol}
-          {minSalary}-{currencySymbol}
-          {maxSalary}/{job.salary.period}
+          {formatSalary(minSalary)}-{currencySymbol}
+          {formatSalary(maxSalary)}/{job.salary.period}
         </Badge>
       </div>
     </Link>

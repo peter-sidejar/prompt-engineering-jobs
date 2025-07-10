@@ -23,7 +23,7 @@ function MobileMenu() {
       </SheetTrigger>
       <SheetContent side="left">
         <SheetHeader>
-          <SheetTitle className="text-beige-a11">Prompt Engineering Jobs</SheetTitle>
+          <SheetTitle className="text-beige-a11">promptengineers</SheetTitle>
           <SheetDescription>
             Find AI/ML and prompt engineering opportunities. Build your future in artificial intelligence.
           </SheetDescription>
