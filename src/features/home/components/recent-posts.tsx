@@ -14,15 +14,15 @@ function RecentPosts() {
       </p>
       <div className="flex flex-col gap-6 md:flex-row">
         {recentPosts.map((post) => {
-          const formattedTime = formatDistanceToNow(post.timestamp, {
+          const formattedTime = formatDistanceToNow(new Date(post.publishedAt), {
             addSuffix: true,
           });
           return (
             <div className="max-w-[361px] flex flex-col gap-4" key={post.id}>
               <div className="w-full h-full">
-                {post.coverImage ? (
+                {post.featuredImage ? (
                   <Image
-                    src={post.coverImage}
+                    src={post.featuredImage}
                     alt={post.title}
                     height={296}
                     width={361}
@@ -33,7 +33,7 @@ function RecentPosts() {
               </div>
               <div className="flex flex-col gap-2">
                 <p className="text-accent-11 text-sm font-medium">
-                  {post.type}
+                  {post.tags[0] || 'AI/ML'}
                 </p>
                 <p className="text-base font-medium text-foreground">
                   {post.title}
