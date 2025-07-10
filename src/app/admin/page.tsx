@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect, useCallback } from "react";
+import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import AdminProtection from "@/components/admin-protection";
 import { Input } from "@/components/ui/input";
@@ -65,8 +66,15 @@ export default function AdminDashboard() {
   const [filter, setFilter] = useState<"all" | "pending" | "approved" | "featured">("pending");
   const [selectedJob, setSelectedJob] = useState<Job | null>(null);
   const [searchTerm, setSearchTerm] = useState("");
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const fetchJobs = useCallback(async () => {
+    if (!mounted) return;
+    
     setLoading(true);
     try {
       let query = supabase.from('jobs').select('*').order('created_at', { ascending: false });
@@ -88,7 +96,7 @@ export default function AdminDashboard() {
     } finally {
       setLoading(false);
     }
-  }, [filter]);
+  }, [filter, mounted]);
 
   useEffect(() => {
     fetchJobs();
@@ -180,6 +188,14 @@ export default function AdminDashboard() {
     job.company_name.toLowerCase().includes(searchTerm.toLowerCase()) ||
     job.category.toLowerCase().includes(searchTerm.toLowerCase())
   );
+
+  if (!mounted) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-center">Loading...</div>
+      </div>
+    );
+  }
 
   return (
     <AdminProtection>
