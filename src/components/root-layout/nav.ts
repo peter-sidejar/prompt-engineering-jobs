@@ -35,12 +35,12 @@ export type FooterData = {
 
 export const footerData: FooterData = {
   description:
-    "From skilled trades to essential labor, we connect hardworking people with real opportunities.",
+    "From AI research to prompt engineering, we connect innovative minds with cutting-edge opportunities in artificial intelligence.",
   cta: {
     label: "Post a job",
     href: "/post-job",
   },
-  title:"careerably",
+  title:"Prompt Engineering Jobs",
   linkGroups: [
     [
       { label: "Browse jobs", href: "/" },
@@ -49,25 +49,25 @@ export const footerData: FooterData = {
       { label: "Newsletter", href: "/newsletter" },
     ],
     [
-      { label: "Carpenter jobs", href: "/jobs/carpenter" },
-      { label: "Electrician jobs", href: "/jobs/electrician" },
-      { label: "Plumber jobs", href: "/jobs/plumber" },
-      { label: "Driver jobs", href: "/jobs/driver" },
-      { label: "Courier jobs", href: "/jobs/courier" },
+      { label: "Prompt Engineer jobs", href: "/jobs/prompt-engineer" },
+      { label: "AI Engineer jobs", href: "/jobs/ai-engineer" },
+      { label: "ML Engineer jobs", href: "/jobs/ml-engineer" },
+      { label: "Data Scientist jobs", href: "/jobs/data-scientist" },
+      { label: "AI Researcher jobs", href: "/jobs/ai-researcher" },
     ],
     [
-      { label: "Dishwasher jobs", href: "/jobs/dishwasher" },
-      { label: "Server jobs", href: "/jobs/server" },
-      { label: "Laborer jobs", href: "/jobs/laborer" },
-      { label: "Mover jobs", href: "/jobs/mover" },
-      { label: "Assistant jobs", href: "/jobs/assistant" },
+      { label: "NLP Engineer jobs", href: "/jobs/nlp-engineer" },
+      { label: "Computer Vision jobs", href: "/jobs/computer-vision" },
+      { label: "MLOps Engineer jobs", href: "/jobs/mlops-engineer" },
+      { label: "AI Product Manager jobs", href: "/jobs/ai-product-manager" },
+      { label: "LLM Engineer jobs", href: "/jobs/llm-engineer" },
     ],
     [
-      { label: "Housekeeper jobs", href: "/jobs/housekeeper" },
-      { label: "Cleaner jobs", href: "/jobs/cleaner" },
-      { label: "Guard jobs", href: "/jobs/guard" },
-      { label: "Cook jobs", href: "/jobs/cook" },
-      { label: "Gardener jobs", href: "/jobs/gardener" },
+      { label: "AI Ethics Specialist jobs", href: "/jobs/ai-ethics" },
+      { label: "Robotics Engineer jobs", href: "/jobs/robotics-engineer" },
+      { label: "AI Consultant jobs", href: "/jobs/ai-consultant" },
+      { label: "AI Trainer jobs", href: "/jobs/ai-trainer" },
+      { label: "AI Architect jobs", href: "/jobs/ai-architect" },
     ],
   ],
 };

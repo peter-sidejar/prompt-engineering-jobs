@@ -14,8 +14,8 @@ const inter = Inter({
   subsets: ["latin"],
 })
 export const metadata: Metadata = {
-  title: "Careerably",
-  description: "Find solid work. Build a better life.",
+  title: "Prompt Engineering Jobs",
+  description: "Find AI/ML and prompt engineering opportunities. Build your future in artificial intelligence.",
 };
 
 export default function RootLayout({
@@ -25,6 +25,19 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZWE90P9SKD"></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-ZWE90P9SKD');
+            `,
+          }}
+        />
+      </head>
       <body
         className={`${geistMono.variable} ${inter.variable} antialiased`}
       >

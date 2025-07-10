@@ -6,11 +6,15 @@ import {
   SelectContent,
   SelectItem,
   SelectTrigger,
+  SelectValue,
 } from "@/components/ui/select";
 import useCategories from "@/features/job-categories/hooks/use-categories";
+import { useState } from "react";
 
 function Newsletter() {
   const { categories } = useCategories();
+  const [selectedCategory, setSelectedCategory] = useState("all");
+  const [selectedLocation, setSelectedLocation] = useState("all");
   return (
     <div className="p-6 rounded-xl bg-beige-3 flex flex-col gap-4 w-full">
       <div className="flex flex-col gap-2">
@@ -22,9 +26,12 @@ function Newsletter() {
         </p>
       </div>
       <div className="flex flex-col gap-2 md:flex-row md:gap-4">
-        <Select>
-          <SelectTrigger className="!bg-floated md:w-full md:max-w-[215px]">All categories</SelectTrigger>
+        <Select value={selectedCategory} onValueChange={setSelectedCategory}>
+          <SelectTrigger className="!bg-floated md:w-full md:max-w-[215px]">
+            <SelectValue placeholder="All categories" />
+          </SelectTrigger>
           <SelectContent>
+            <SelectItem value="all">All categories</SelectItem>
             {categories.map((category) => {
               return (
                 <SelectItem value={category.slug} key={category.id}>
@@ -34,12 +41,15 @@ function Newsletter() {
             })}
           </SelectContent>
         </Select>
-        <Select>
-          <SelectTrigger className="!bg-floated md:w-full md:max-w-[215px]">All locations</SelectTrigger>
+        <Select value={selectedLocation} onValueChange={setSelectedLocation}>
+          <SelectTrigger className="!bg-floated md:w-full md:max-w-[215px]">
+            <SelectValue placeholder="All locations" />
+          </SelectTrigger>
           <SelectContent>
-            <SelectItem value="light">Huston</SelectItem>
-            <SelectItem value="dark">California</SelectItem>
-            <SelectItem value="system">New york</SelectItem>
+            <SelectItem value="all">All locations</SelectItem>
+            <SelectItem value="houston">Houston</SelectItem>
+            <SelectItem value="california">California</SelectItem>
+            <SelectItem value="new-york">New York</SelectItem>
           </SelectContent>
         </Select>
         <Input placeholder="Email address" className="bg-floated w-full" />

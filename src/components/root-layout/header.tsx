@@ -10,7 +10,7 @@ function Header() {
   return (
     <div className="flex items-center justify-between px-4 py-3 md:px-0 container ">
       <Link href="/" className="text-sm font-semibold text-beige-a11 hover:text-beige-a12 transition-colors">
-        careerably
+        Prompt Engineering Jobs
       </Link>
       <MobileMenu />
       <div className="hidden gap-3 md:flex">

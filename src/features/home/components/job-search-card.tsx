@@ -28,15 +28,15 @@ function JobSearchCard({ filters, onFiltersChange }: JobSearchCardProps) {
   };
 
   const handleCategoryChange = (value: string) => {
-    onFiltersChange({ ...filters, category: value });
+    onFiltersChange({ ...filters, category: value === "all" ? "" : value });
   };
 
   const handleLocationChange = (value: string) => {
-    onFiltersChange({ ...filters, location: value });
+    onFiltersChange({ ...filters, location: value === "all" ? "" : value });
   };
 
   const handleJobTypeChange = (value: string) => {
-    onFiltersChange({ ...filters, jobType: value });
+    onFiltersChange({ ...filters, jobType: value === "all" ? "" : value });
   };
 
   const clearFilters = () => {
@@ -77,12 +77,12 @@ function JobSearchCard({ filters, onFiltersChange }: JobSearchCardProps) {
         </div>
         <Separator />
         <div className="p-4 flex gap-4">
-          <Select value={filters.category} onValueChange={handleCategoryChange}>
+          <Select value={filters.category || "all"} onValueChange={handleCategoryChange}>
             <SelectTrigger className="!bg-floated w-full">
               <SelectValue placeholder="Category" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="">All Categories</SelectItem>
+              <SelectItem value="all">All Categories</SelectItem>
               {categories.map((category) => (
                 <SelectItem key={category} value={category}>
                   {category.charAt(0).toUpperCase() + category.slice(1)}
@@ -90,12 +90,12 @@ function JobSearchCard({ filters, onFiltersChange }: JobSearchCardProps) {
               ))}
             </SelectContent>
           </Select>
-          <Select value={filters.location} onValueChange={handleLocationChange}>
+          <Select value={filters.location || "all"} onValueChange={handleLocationChange}>
             <SelectTrigger className="!bg-floated w-full">
               <SelectValue placeholder="Location" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="">All Locations</SelectItem>
+              <SelectItem value="all">All Locations</SelectItem>
               {locations.map((location) => (
                 <SelectItem key={location} value={location}>
                   {location}
@@ -103,12 +103,12 @@ function JobSearchCard({ filters, onFiltersChange }: JobSearchCardProps) {
               ))}
             </SelectContent>
           </Select>
-          <Select value={filters.jobType} onValueChange={handleJobTypeChange}>
+          <Select value={filters.jobType || "all"} onValueChange={handleJobTypeChange}>
             <SelectTrigger className="!bg-floated w-full">
               <SelectValue placeholder="Job Type" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="">All Types</SelectItem>
+              <SelectItem value="all">All Types</SelectItem>
               {jobTypes.map((jobType) => (
                 <SelectItem key={jobType} value={jobType}>
                   {jobType}

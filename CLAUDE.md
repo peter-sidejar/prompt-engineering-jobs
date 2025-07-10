@@ -1,7 +1,7 @@
 # Prompt Engineering Jobs - AI/ML Job Board Platform
 
 ## Project Overview
-Prompt Engineering Jobs is a specialized job board platform focused on AI, ML, and prompt engineering positions. Built with Next.js 15, TypeScript, and Tailwind CSS. This project is a duplicate of the Careerably platform, customized for AI/ML job market.
+Prompt Engineering Jobs is a specialized job board platform focused on AI, ML, and prompt engineering positions. Built with Next.js 15, TypeScript, and Tailwind CSS. This project is a duplicate of the Careerably platform, customized for the AI/ML job market.
 
 ## Tech Stack
 - **Framework**: Next.js 15 with Turbopack
@@ -66,7 +66,7 @@ This platform specializes in:
 - Machine Learning Operations (MLOps)
 
 ## Development Notes
-- Duplicated from Careerably platform
+- Duplicated from the Careerably platform
 - Needs branding updates for AI/ML focus
 - Uses Next.js 15 App Router
 - Turbopack for fast development builds

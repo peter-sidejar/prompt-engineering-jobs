@@ -392,7 +392,6 @@ type UseJobsProps = {
   category?: string;
 };
 export default function useJobs({ featured = false, category }: UseJobsProps) {
-    console.log(category,featured)
   if (featured) {
     return jobs.filter((job) => job.isFeatured);
   }

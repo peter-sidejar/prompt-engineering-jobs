@@ -23,9 +23,9 @@ function MobileMenu() {
       </SheetTrigger>
       <SheetContent side="left">
         <SheetHeader>
-          <SheetTitle className="text-beige-a11">careerably</SheetTitle>
+          <SheetTitle className="text-beige-a11">Prompt Engineering Jobs</SheetTitle>
           <SheetDescription>
-            Find Solid Work. Build a better Life.
+            Find AI/ML and prompt engineering opportunities. Build your future in artificial intelligence.
           </SheetDescription>
         </SheetHeader>
         <div className="flex flex-col gap-3 px-4">
