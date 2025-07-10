@@ -9,7 +9,9 @@ function Header() {
   const pathname = usePathname();
   return (
     <div className="flex items-center justify-between px-4 py-3 md:px-0 container ">
-      <p className="text-sm font-semibold text-beige-a11">careerably</p>
+      <Link href="/" className="text-sm font-semibold text-beige-a11 hover:text-beige-a12 transition-colors">
+        careerably
+      </Link>
       <MobileMenu />
       <div className="hidden gap-3 md:flex">
         {navLinks.map((link) => {

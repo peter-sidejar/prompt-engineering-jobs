@@ -5,8 +5,27 @@ export const jobs: Job[] = [
     id: "1",
     company: {
       name: "Apex Contracting",
+      description: "Leading commercial electrical contractor with over 20 years of experience serving the Chicago area.",
+      website: "https://apexcontracting.com",
     },
     title: "Electrician (Commercial)",
+    description: "We are seeking a skilled Commercial Electrician to join our growing team. This role involves installing, maintaining, and repairing electrical systems in commercial buildings, working with conduit, wiring, and control systems.",
+    requirements: [
+      "2+ years of commercial electrical experience",
+      "Valid electrician license",
+      "Experience with conduit bending and installation",
+      "Knowledge of electrical codes and safety standards",
+      "Ability to read blueprints and electrical schematics",
+      "Strong problem-solving skills"
+    ],
+    benefits: [
+      "Competitive hourly rate $28-$35/hr",
+      "Health insurance coverage",
+      "401(k) with company match",
+      "Paid time off and holidays",
+      "Tool allowance",
+      "Ongoing training opportunities"
+    ],
     location: {
       city: "Chicago",
       state: "IL",
@@ -21,6 +40,9 @@ export const jobs: Job[] = [
     posted_at: new Date(Date.now() - 2 * 24 * 60 * 60 * 1000).toISOString(),
     category: "electrician",
     isFeatured: true,
+    applyUrl: "https://apexcontracting.com/careers/electrician-commercial",
+    remote: false,
+    experienceLevel: "Mid-level",
   },
   {
     id: "2",

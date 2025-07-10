@@ -2,8 +2,14 @@ export type Job = {
     id: string;
     company: {
       name: string;
+      description?: string;
+      logo?: string;
+      website?: string;
     };
     title: string;
+    description?: string;
+    requirements?: string[];
+    benefits?: string[];
     location: {
       city: string;
       state: string;
@@ -17,7 +23,10 @@ export type Job = {
     };
     posted_at: string;
     category?: string;
-    isFeatured?:boolean
+    isFeatured?: boolean;
+    applyUrl?: string;
+    remote?: boolean;
+    experienceLevel?: string;
   };
   
   export enum EmploymentType {

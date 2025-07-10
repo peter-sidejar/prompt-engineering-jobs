@@ -7,7 +7,7 @@ export const navLinks: NavLink[] = [
   {
     id: 1,
     title: "Browse jobs",
-    url: "/jobs",
+    url: "/",
   },
   {
     id: 2,
@@ -43,7 +43,7 @@ export const footerData: FooterData = {
   title:"careerably",
   linkGroups: [
     [
-      { label: "Browse jobs", href: "/jobs" },
+      { label: "Browse jobs", href: "/" },
       { label: "About us", href: "/about" },
       { label: "Blog", href: "/blog" },
       { label: "Newsletter", href: "/newsletter" },
