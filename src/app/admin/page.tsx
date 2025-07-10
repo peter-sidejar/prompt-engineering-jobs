@@ -1,6 +1,5 @@
 "use client";
 import { useState, useEffect, useCallback } from "react";
-import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import AdminProtection from "@/components/admin-protection";
 import { Input } from "@/components/ui/input";
