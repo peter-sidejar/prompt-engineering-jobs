@@ -1,6 +1,7 @@
 "use client";
 import { notFound } from "next/navigation";
 import Image from "next/image";
+import { use } from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import BeigeBg from "@/components/beige-bg";
@@ -9,11 +10,11 @@ import { useBlogPosts } from "@/features/blog/hooks/use-blog-posts";
 import { formatDistanceToNow } from "date-fns";
 
 interface BlogPostPageProps {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }
 
 export default function BlogPostPage({ params }: BlogPostPageProps) {
-  const { slug } = params;
+  const { slug } = use(params);
   const blogPosts = useBlogPosts();
   const post = blogPosts.find(p => p.slug === slug);
 
