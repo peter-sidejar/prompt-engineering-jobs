@@ -103,7 +103,7 @@ export default function PostJobPage() {
         featured: false,
       };
 
-      const { data, error } = await supabase
+      const { error } = await supabase
         .from('jobs')
         .insert([jobData])
         .select();

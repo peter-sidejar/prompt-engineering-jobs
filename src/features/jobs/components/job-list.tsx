@@ -15,7 +15,7 @@ type Props = {
 function JobList({ title, category, searchFilters, showLoadMore = false }: Props) {
   const [displayLimit, setDisplayLimit] = useState(10);
   const allJobs = useJobs({});
-  const categoryJobs = category ? useJobs({ category }) : allJobs;
+  const categoryJobs = useJobs({ category });
   
   const hasActiveSearch = searchFilters && (searchFilters.query || searchFilters.category || searchFilters.location || searchFilters.jobType);
   
@@ -27,7 +27,7 @@ function JobList({ title, category, searchFilters, showLoadMore = false }: Props
     jobType: "",
   });
   
-  const allJobsToShow = hasActiveSearch ? searchResults : categoryJobs;
+  const allJobsToShow = hasActiveSearch ? searchResults : (category ? categoryJobs : allJobs);
   const jobsToShow = showLoadMore ? allJobsToShow.slice(0, displayLimit) : allJobsToShow;
   const hasMoreJobs = showLoadMore && allJobsToShow.length > displayLimit;
   const displayTitle = hasActiveSearch ? `Search Results (${allJobsToShow.length})` : title;

@@ -9,11 +9,11 @@ import { useBlogPosts } from "@/features/blog/hooks/use-blog-posts";
 import { formatDistanceToNow } from "date-fns";
 
 interface BlogPostPageProps {
-  params: Promise<{ slug: string }>;
+  params: { slug: string };
 }
 
-export default async function BlogPostPage({ params }: BlogPostPageProps) {
-  const { slug } = await params;
+export default function BlogPostPage({ params }: BlogPostPageProps) {
+  const { slug } = params;
   const blogPosts = useBlogPosts();
   const post = blogPosts.find(p => p.slug === slug);
 

@@ -1,7 +1,6 @@
 "use client";
 import { useState } from "react";
 import BeigeBg from "@/components/beige-bg";
-import { Button } from "@/components/ui/button";
 import FeaturedJobs from "@/features/home/components/featured-jobs";
 import HeroCopy from "@/features/home/components/hero-copy";
 import JobSearchCard from "@/features/home/components/job-search-card";

@@ -32,15 +32,15 @@ export default function AboutPage() {
                 Our Mission
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                We're building the bridge between exceptional AI talent and groundbreaking opportunities. 
+                We&apos;re building the bridge between exceptional AI talent and groundbreaking opportunities. 
                 In a world where artificial intelligence is reshaping every industry, prompt engineers and 
                 AI specialists are the architects of human-AI collaboration.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
                 Our platform connects curious technologists, seasoned researchers, and innovative companies 
-                who are pushing the boundaries of what's possible with AI. Whether you're crafting the perfect 
+                who are pushing the boundaries of what&apos;s possible with AI. Whether you&apos;re crafting the perfect 
                 prompt, optimizing large language models, or designing the next generation of AI interactions, 
-                we're here to help you find your next breakthrough role.
+                we&apos;re here to help you find your next breakthrough role.
               </p>
             </section>
 
@@ -56,7 +56,7 @@ export default function AboutPage() {
                   </h3>
                   <p className="text-muted-foreground leading-relaxed">
                     Prompt engineering represents a fundamental shift in how we communicate with AI systems. 
-                    It's not just about technology—it's about creating intuitive, effective, and ethical 
+                    It&apos;s not just about technology—it&apos;s about creating intuitive, effective, and ethical 
                     interactions between humans and artificial intelligence.
                   </p>
                 </div>
@@ -67,7 +67,7 @@ export default function AboutPage() {
                   <p className="text-muted-foreground leading-relaxed">
                     Every prompt engineered today shapes how millions of users will interact with AI tomorrow. 
                     From improving customer service to advancing scientific research, prompt engineers are 
-                    at the forefront of AI's real-world applications.
+                    at the forefront of AI&apos;s real-world applications.
                   </p>
                 </div>
                 <div>
@@ -86,7 +86,7 @@ export default function AboutPage() {
                   </h3>
                   <p className="text-muted-foreground leading-relaxed">
                     Prompt engineering combines technical expertise with creativity, psychology, and domain 
-                    knowledge. It's a field where diverse backgrounds and perspectives create the most 
+                    knowledge. It&apos;s a field where diverse backgrounds and perspectives create the most 
                     innovative solutions.
                   </p>
                 </div>

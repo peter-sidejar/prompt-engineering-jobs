@@ -8,7 +8,7 @@ function HeroCopy() {
       </h1>
       <p className="text-base text-beige-12">
         From language-model tinkering to multimodal R&D, we connect curious technologists
-        with breakthrough roles. Whether you're learning prompt craft or optimizing
+        with breakthrough roles. Whether you&apos;re learning prompt craft or optimizing
         billion-parameter LLMs, find positions that pay competitively, challenge you daily,
         and value your expertise.
       </p>

@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { Button } from "@/components/ui/button";
 import AdminProtection from "@/components/admin-protection";
 import { Input } from "@/components/ui/input";
@@ -29,7 +29,7 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { supabase } from "@/lib/supabase";
-import { Check, X, Eye, Edit, Trash2, RefreshCw, ArrowDown } from "lucide-react";
+import { Check, Eye, Trash2, RefreshCw, ArrowDown } from "lucide-react";
 
 interface Job {
   id: string;
@@ -66,7 +66,7 @@ export default function AdminDashboard() {
   const [selectedJob, setSelectedJob] = useState<Job | null>(null);
   const [searchTerm, setSearchTerm] = useState("");
 
-  const fetchJobs = async () => {
+  const fetchJobs = useCallback(async () => {
     setLoading(true);
     try {
       let query = supabase.from('jobs').select('*').order('created_at', { ascending: false });
@@ -88,11 +88,11 @@ export default function AdminDashboard() {
     } finally {
       setLoading(false);
     }
-  };
+  }, [filter]);
 
   useEffect(() => {
     fetchJobs();
-  }, [filter]);
+  }, [fetchJobs]);
 
   const handleApprove = async (jobId: string) => {
     try {
@@ -207,7 +207,7 @@ export default function AdminDashboard() {
         
         <div className="min-w-[200px]">
           <Label htmlFor="filter" className="mb-2 block">Filter</Label>
-          <Select value={filter} onValueChange={(value: any) => setFilter(value)}>
+          <Select value={filter} onValueChange={(value: "all" | "pending" | "approved" | "featured") => setFilter(value)}>
             <SelectTrigger>
               <SelectValue />
             </SelectTrigger>
